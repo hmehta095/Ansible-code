@@ -1,0 +1,13 @@
+---
+ - hosts: dev
+   tasks:
+     - name: Install Package
+       command: /bin/cat/tmp/hai
+       register: out
+       ignore_errors: yes
+
+     - debug: msg={{out}}
+     - name: hai hello
+
+       shell: /bin/echo hello
+       when: out.rc==2

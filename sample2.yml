@@ -1,0 +1,6 @@
+---
+ - hosts: dev
+   vars:
+     package_name: "httpd"
+   tasks:
+     - debug: msg={{package_name}}

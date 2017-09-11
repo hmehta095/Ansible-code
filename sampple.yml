@@ -1,0 +1,13 @@
+---
+ - hosts: dev
+   tasks:
+    - name: hello world
+      shell: /bin/echo hello world
+      register: out
+
+    - name: get uptime
+      command: uptime 
+      register: uptime
+
+    - debug: var="{{out.stdout}}"
+      debug: msg="{{uptime}}"

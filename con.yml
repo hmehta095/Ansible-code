@@ -1,0 +1,6 @@
+---
+ - hosts: dev
+   tasks:
+     - name: Install package
+       yum: name=httpd state=latest
+       when: ansible_os_family=="RedHat"
